@@ -1,7 +1,7 @@
 package Company;
 import java.time.*;
 
-public class Employee implements Comparable<Employee>{
+public class Employee implements Comparable<Employee>,Position{
 
     public static void main(String[] args){
         System.out.println("This is so cool");
