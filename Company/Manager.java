@@ -7,6 +7,9 @@ public class Manager extends Employee{
         System.out.println(x+" in Ma");
     }
 
+    public Manager(){
+    }
+
     public Manager(String n, double s, int year, int month, int day){
 		super(n, s, year, month, day);
     }

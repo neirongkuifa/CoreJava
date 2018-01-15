@@ -1,7 +1,7 @@
 package Company;
 import java.time.*;
 
-public class Employee implements Comparable<Employee>,Position{
+public class Employee implements Comparable<Employee>,Position,Cloneable{
 
     public static void main(String[] args){
         System.out.println("This is so cool");
@@ -11,12 +11,15 @@ public class Employee implements Comparable<Employee>,Position{
 	private double salary;
 	private LocalDate hireDay;
 
+	//public Employee(){};
+
 	public Employee(String n, double s, int year, int month, int day){
 		name=n;
 		salary=s;
 		hireDay=LocalDate.of(year,month,day);
 
 	}
+
 	public String getName(){
 		return name;
     }
