@@ -1,6 +1,6 @@
 
 import static java.lang.System.*;
-import Company.Employee;;
+import Company.Employee;
 import java.lang.reflect.*;
 
 public class ParamTest{
@@ -9,6 +9,8 @@ public class ParamTest{
         Employee b=new Employee("Harry Hacker", 50000, 1989, 10, 1);
         Class cl=Class.forName("Manager");
         Class supercl=cl.getSuperclass();
+        Method m=supercl.getMethod("getName");
+        System.out.println(m.invoke(b).toString());
         out.println(supercl.toString());
         out.println(Modifier.toString(supercl.getModifiers()));
         Constructor[] con=supercl.getDeclaredConstructors();

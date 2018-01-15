@@ -1,7 +1,7 @@
 package Company;
 import java.time.*;
 
-public class Employee{
+public class Employee implements Comparable<Employee>{
 
     public static void main(String[] args){
         System.out.println("This is so cool");
@@ -36,6 +36,10 @@ public class Employee{
 	
 	public void test(double x){
 		System.out.println(x+" in Em!");
+	}
+
+	public int compareTo(Employee em){
+		return Double.compare(this.salary, em.salary);
 	}
 	
 }

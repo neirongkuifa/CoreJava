@@ -1,5 +1,6 @@
 package Company;
 import java.time.*;
+import java.util.*;
 
 /**
 /*@author Abel
@@ -13,9 +14,10 @@ public class EmployeeTest{
 		staff[1]=new Employee("Harry Hacker", 50000, 1989, 10, 1);
 		staff[2]=new Employee("Tony Tester", 40000, 1990, 3, 15);
 
-		for(Employee e : staff){
-			e.raiseSalary(5);
-		}
+		Arrays.sort(staff);
+
+		for(Employee e: staff)
+			System.out.println(e.getName()+" "+e.getSalary());
 
 	}
 }
