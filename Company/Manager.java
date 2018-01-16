@@ -1,10 +1,11 @@
 package Company;
-import Company.*;
+import CompanyB.*;
 import java.lang.reflect.*;
 
-public class Manager extends Employee{
-    public void test(double x){
-        System.out.println(x+" in Ma");
+public class Manager extends CompanyB.Employee{
+    public static void main(String...args){
+        Manager e=new Manager("Carl Cracker", 75000, 1987, 12,15);
+        System.out.println(e.getName());
     }
 
     public Manager(){

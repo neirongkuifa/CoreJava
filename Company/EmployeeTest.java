@@ -6,7 +6,7 @@ import java.util.*;
 /*@author Abel
 */
 
-public class EmployeeTest extends Manager{
+public class EmployeeTest extends Employee{
 	public static void main(String[] args){
 		Employee[] staff=new Employee[3];
 		Manager[] managers=new Manager[3];
@@ -19,7 +19,7 @@ public class EmployeeTest extends Manager{
 		managers[1]=new Manager("Harry Hacker", 50000, 1989, 10, 1);
 		managers[2]=new Manager("Tony Tester", 40000, 1990, 3, 15);
 
-		//Employee staffPo=staff[0].clone();
+		Employee staffPo=staff[0].clone();
 		//Manager manaPo=managers[0].clone();
 		//Position.printTest();
 		//staffPo.printClass();

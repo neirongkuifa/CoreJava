@@ -1,15 +1,22 @@
 package CompanyB;
 import java.time.*;
+import Company.*;
 
-public class Employee{
+public class Employee implements Comparable<Employee>,Cloneable{
 
-    public static void main(String[] args){
-        System.out.println("This is so cool");
+    public static void main(String[] args) throws Exception{
+		System.out.println("This is so cool");
+		Employee e=new Employee("Carl Cracker", 75000, 1987, 12,15);
+        System.out.println(e.name);
+    //    Manager test=(Manager)e.clone();
     }
 
-	private final String name;
+	//final variables either have an initial value or initialized in the constructor. Exactly one initialization must be excuted.
+	protected String name;
 	private double salary;
 	private LocalDate hireDay;
+
+	public Employee(){}
 
 	public Employee(String n, double s, int year, int month, int day){
 		name=n;
@@ -17,7 +24,8 @@ public class Employee{
 		hireDay=LocalDate.of(year,month,day);
 
 	}
-	public String getName(){
+
+	protected String getName(){
 		return name;
     }
 
@@ -34,10 +42,12 @@ public class Employee{
 		salary+=raise;
 	}
 	
-	private int test(){
-		return 5;
+	public void test(double x){
+		System.out.println(x+" in Em!");
 	}
-	public void privatetest(Employee e){
-		System.out.println(e.test());
+
+	public int compareTo(Employee em){
+		return Double.compare(this.salary, em.salary);
 	}
+	
 }

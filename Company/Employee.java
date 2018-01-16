@@ -3,15 +3,19 @@ import java.time.*;
 
 public class Employee implements Comparable<Employee>,Position,Cloneable{
 
-    public static void main(String[] args){
-        System.out.println("This is so cool");
+    public static void main(String[] args) throws Exception{
+		System.out.println("This is so cool");
+		Employee e=new Employee("Carl Cracker", 75000, 1987, 12,15);
+        System.out.println(e.getName());
+        Employee test=(Employee)e.clone();
     }
 
-	public final String name;
+	//final variables either have an initial value or initialized in the constructor. Exactly one initialization must be excuted.
+	public String name;
 	private double salary;
 	private LocalDate hireDay;
 
-	//public Employee(){};
+	public Employee(){}
 
 	public Employee(String n, double s, int year, int month, int day){
 		name=n;
@@ -20,7 +24,7 @@ public class Employee implements Comparable<Employee>,Position,Cloneable{
 
 	}
 
-	public String getName(){
+	protected String getName(){
 		return name;
     }
 
