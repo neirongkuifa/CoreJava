@@ -27,12 +27,23 @@ class TalkingClock{
         this.beep=beep;
     }
 
+    public static void staticInTest(){
+        class staCl{
+            public void printInfo(){
+               System.out.println("This is an inner class");
+            }
+        }
+        staCl s=new staCl();
+        s.printInfo();
+    }
+
     public void start(){
         int test=5;
+        staticInTest();
         // test=8;
         class localPrinter implements ActionListener{
             public void actionPerformed(ActionEvent e){
-                System.out.println("Local Inner Class:"+this.toString()+" "+TalkingClock.this.interval+" "+test);
+                System.out.println("Local Inner Class:"+this.toString());//+" "+TalkingClock.this.interval+" "+test);
             }
         }
         //int test=5;
@@ -44,7 +55,7 @@ class TalkingClock{
         t2.start();  
     }
 
-    public class TimePrinter implements ActionListener{
+    public static class TimePrinter implements ActionListener{
         public void actionPerformed(ActionEvent e){
             System.out.println("Inner Class:"+this.toString());
         }
