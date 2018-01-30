@@ -6,9 +6,8 @@ public class GenericTest{
     public static void main(String...args){
         DateInterval di=new DateInterval(LocalDate.of(2016,12,5),LocalDate.of(2018,1,23));
         Method[] m=di.getClass().getMethods();
-        System.out.println(Arrays.toString(di.getClass().getFields()));
-        for(Method method: m)
-            System.out.println(method.getName()+" "+Arrays.toString(method.getParameters()));
+        Pair<LocalDate> p=di;
+        p.setSecond(LocalDate.of(2016,12,5)); //The reason why you can call setSecond on p and still get result of di.setSecond is you override this method in DI. Without bridge method, you do not override mthod in DI actually
     }
 
     public static <T> void printType(T a){
@@ -31,7 +30,8 @@ class DateInterval extends Pair<LocalDate>{
         super.setSecond(second);
         System.out.println(this.third);
     }
-    public void setSecond(LocalDate second){
+    public void setSecond(LocalDate second0){
+        LocalDate second=(LocalDate)second0;
         if(second.compareTo(getSecond())>=0)
             super.setSecond(second);
     }
