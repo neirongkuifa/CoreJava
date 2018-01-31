@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.function.IntConsumer;
+import java.util.function.Supplier;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.Timer;
@@ -34,8 +35,13 @@ public class LambdaTest{
         // System.exit(0);
         // runTest("Yes", ()->System.out.println("It works!!!"));
         // intConsumerTest(10, (x)->System.out.println(x));
+        getString(String::new);
     }
 
+
+    public static <T> void getString(Supplier<T> s){
+        System.out.println(s.get().getClass());
+    }
     public static void runTest(String cmd, Runnable r){
         if(cmd.equals("Yes")){
             r.run();

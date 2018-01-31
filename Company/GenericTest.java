@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.lang.reflect.*;
 import java.util.*;
 
+
 public class GenericTest{
     public static void main(String...args){
         // DateInterval di=new DateInterval(LocalDate.of(2016,12,5),LocalDate.of(2018,1,23));
@@ -15,6 +16,24 @@ public class GenericTest{
         Pair[] pair2=new Pair[10];
         pair2[0]=new Pair<String>();
         pair2[1]=new Pair<Integer>();
+
+        GenericTest.<String>min(new String[]{"Abel","Atwood"});
+
+        System.out.println(pair[0].getClass().getName());
+
+       if(pair[0] instanceof Pair)
+            System.out.println("Yes!!!!!!!!!!!!");
+
+        printTest(new Pair<String>("Abel","Atwood"));
+        printTest(new Pair<Integer>(5678,1234));
+    }
+
+    public static void printTest(Pair<? extends Comparable> p){
+        System.out.println(p.getFirst()+" "+p.getSecond());
+    }
+
+    public static <T> void min(T[] t){
+        T[] test=(T[])new String[10];
     }
 
     // public static <T> void printType(T a){
