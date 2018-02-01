@@ -1,8 +1,3 @@
-import java.time.LocalDate;
-import java.lang.reflect.*;
-import java.util.*;
-
-
 public class GenericTest{
     public static void main(String...args){
         // DateInterval di=new DateInterval(LocalDate.of(2016,12,5),LocalDate.of(2018,1,23));

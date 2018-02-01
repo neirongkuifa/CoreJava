@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class GenericTest{
     public static void main(String[] args){
         Automobile a=new Automobile();
@@ -41,6 +43,11 @@ public class GenericTest{
         String s;
         while((s=ls.pop())!=null)
             System.out.println(s);
+
+        RandomList<String> r=new RandomList<>();
+        for(String str:"One Two Three Four Five".split(" "))
+            r.add(str);
+        System.out.println(r.select());
     }
 
     public static TwoTuple<String, String> tupleTest(){
@@ -51,7 +58,7 @@ public class GenericTest{
 class Tool{
     private String desc="This is a Tool!";
     public String getDesc(){
-        return this.desc;
+        return this.desc+" "+getClass().getSimpleName();
     }
 }
 
@@ -187,4 +194,17 @@ class LinkedStack<T>{
         return result;
     }
 
+}
+
+class RandomList<T>{
+    private ArrayList<T> rl=new ArrayList<>();
+    private Random r=new Random();
+
+    public void add(T t){
+        rl.add(t);
+    }
+
+    public T select(){
+        return rl.get(r.nextInt(rl.size()));
+    }
 }
