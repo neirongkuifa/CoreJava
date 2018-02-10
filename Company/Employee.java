@@ -1,7 +1,7 @@
 package Company;
 import java.time.*;
 
-public class Employee implements Comparable<Employee>,Position,Cloneable{
+public class Employee implements Comparable<Employee>,Cloneable{
 
     public static void main(String[] args) throws Exception{
 		System.out.println("This is so cool");
